@@ -1,0 +1,21 @@
+{
+  "$schema": "https://nod.n8n.io/docs/schemas/apps/v1/app.schema.json",
+  "displayName": "Todoist",
+  "icon": "./io.n8n.nod/icon.svg",
+  "categories": ["Productivity"],
+  "connection": {
+    "type": "mcp",
+    "server": "todoist",
+    "authentication": ["oauth2"]
+  },
+  "prompts": [
+    "What's due today in Todoist, and what should I do first?",
+    "Turn these meeting notes into tasks in my Work project."
+  ],
+  "requirements": ["A Todoist account with access to the projects you want to use."],
+  "limitations": [
+    "Project sharing and workspace roles limit what this connection can read or change.",
+    "Todoist's MCP server asks for read and write access, so Todoist may refuse some deletions.",
+    "This app does not start automatic monitoring from its MCP connection alone."
+  ]
+}

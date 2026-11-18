@@ -1,0 +1,50 @@
+{
+  "$schema": "https://nod.n8n.io/docs/schemas/apps/v1/contract.schema.json",
+  "type": "mcp",
+  "source": "https://github.com/todoist/todoist-mcp",
+  "tool": {
+    "name": "find-projects",
+    "description": "List or search by name the projects the user has joined.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "searchText": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 200
+        }
+      }
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  "input": {
+    "searchText": "synthetic project",
+    "limit": 10
+  },
+  "output": {
+    "projects": [
+      {
+        "id": "synthetic-project",
+        "name": "Sample project",
+        "description": "",
+        "isFavorite": false,
+        "isShared": false,
+        "inboxProject": false,
+        "viewStyle": "list",
+        "childOrder": 1,
+        "isArchived": false
+      }
+    ],
+    "totalCount": 1,
+    "hasMore": false,
+    "appliedFilters": {
+      "searchText": "synthetic project",
+      "limit": 10
+    }
+  }
+}
